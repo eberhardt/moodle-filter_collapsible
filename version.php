@@ -17,8 +17,7 @@
 /**
  * Version information
  *
- * @package    filter
- * @subpackage collapsible
+ * @package    filter_collapsible
  * @copyright  2015 Jan Eberhardt <eberhardt@math.tu-berlin.de>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

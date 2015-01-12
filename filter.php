@@ -15,19 +15,20 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Filter converting emoticon texts into images
+ * Filter for generating collapsible regions easily
  *
- * This filter uses the emoticon settings in Site admin > Appearance > HTML settings
- * and replaces emoticon texts with images.
- *
- * @package    filter
- * @subpackage collapsible
+ * @package    filter_collapsible
  * @copyright  2015 Jan Eberhardt <eberhardt@math.tu-berlin.de>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
+/**
+ * Collapsible region filter
+ *
+ * @author Jan Eberhardt <eberhardt@math.tu-berlin.de>
+ */
 class filter_collapsible extends moodle_text_filter {
 
     private $started;
