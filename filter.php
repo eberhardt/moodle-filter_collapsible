@@ -33,7 +33,7 @@ class filter_collapsible extends moodle_text_filter {
 
     private $started;
 
-    public static $tag = '{collapsible}';
+    const TAG = '{collapsible}';
 
     /**
      * Apply the filter to the text
@@ -44,7 +44,7 @@ class filter_collapsible extends moodle_text_filter {
      * @return string text after processing
      */
     public function filter($text, array $options = array()) {
-        if (substr_count($text, $this::$tag) > 1) {
+        if (strpos($text, self::TAG) !== false) {
             $this->replace_collapsible($text);
         }
 
@@ -60,7 +60,7 @@ class filter_collapsible extends moodle_text_filter {
         $started = false;
         $id = 0;
         $replaced = '';
-        $splits = explode($this::$tag, $text);
+        $splits = explode(self::TAG, $text);
         $lead = array_shift($splits);
         foreach ($splits as $split) {
             if ($started) {
