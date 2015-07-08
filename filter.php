@@ -57,24 +57,25 @@ class filter_collapsible extends moodle_text_filter {
      * @param string $text
      */
     private function replace_collapsible(&$text) {
+	static $id = 0;
+
         $started = false;
-        $id = 0;
         $replaced = '';
-        $splits = explode(self::TAG, $text);
-        $lead = array_shift($splits);
-        foreach ($splits as $split) {
+        $parts = explode(self::TAG, $text);
+        $lead = array_shift($parts);
+        foreach ($parts as $tail) {
             if ($started) {
                 $started = false;
-                $replaced .= $this->end_region($split);
+                $replaced .= $this->end_region($tail);
             } else {
                 $started = true;
-                if (preg_match('/^\[([^\]]+)\]/', $split, $match)) {
-                    $split = trim(substr($split, strpos($split, ']') + 1));
+                if (preg_match('/^\[([^\]]+)\](.*)/', $tail, $match)) {
                     $more = $match[1];
+                    $tail = $match[2];
                 } else {
                     $more = get_string("clicktohideshow");
                 }
-                $replaced .= $this->start_region('collapsible' . $id++, $more, $split);;
+                $replaced .= $this->start_region('collapsible' . $id++, $more, $tail);;
             }
         }
 
