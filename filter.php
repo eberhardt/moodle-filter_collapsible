@@ -57,7 +57,7 @@ class filter_collapsible extends moodle_text_filter {
      * @param string $text
      */
     private function replace_collapsible(&$text) {
-	static $id = 0;
+        static $id = 0;
 
         $started = false;
         $replaced = '';
@@ -75,7 +75,7 @@ class filter_collapsible extends moodle_text_filter {
                 } else {
                     $more = get_string("clicktohideshow");
                 }
-                $replaced .= $this->start_region('collapsible' . $id++, $more, $tail);;
+                $replaced .= $this->start_region('collapsible-' . $id++, $more, $tail);;
             }
         }
 
