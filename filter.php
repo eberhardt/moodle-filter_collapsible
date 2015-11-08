@@ -69,7 +69,7 @@ class filter_collapsible extends moodle_text_filter {
                 $replaced .= $this->end_region($tail);
             } else {
                 $started = true;
-                if (preg_match('/^\[([^\]]+)\](.*)/', $tail, $match)) {
+                if (preg_match('/^\[([^\]]+)\]([\s\S]*)/', $tail, $match)) {
                     $more = $match[1];
                     $tail = $match[2];
                 } else {
