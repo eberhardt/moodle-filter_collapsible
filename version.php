@@ -24,8 +24,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2015010801;
+$plugin->version   = 2015010802;
 $plugin->requires  = 2014050800;
 $plugin->component = 'filter_collapsible';
-$plugin->release   = '1.01';
+$plugin->release   = '1.02';
 $plugin->maturity   = MATURITY_STABLE;
